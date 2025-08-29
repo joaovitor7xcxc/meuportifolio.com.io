@@ -1,0 +1,160 @@
+:root {
+  --bg1: #2c2bf0;
+  --bg2: #3326d9;
+  --dark: #0b0b0b;
+  --light: #f7f7f7;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(180deg, var(--bg1), var(--bg2));
+  color: var(--light);
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Palavras "MEU PROJETO" Centralizadas */
+.giant-words {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  line-height: 1;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.word {
+  font-weight: 900;
+  letter-spacing: -1px;
+  color: #ffffff;
+  font-size: clamp(4rem, 12vw, 12rem);
+}
+
+/* Apresentação Pessoal */
+.brand {
+  position: absolute;
+  left: 28px;
+  bottom: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 5;
+  max-width: 500px;
+}
+
+.brand .brand-name {
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1.3;
+  font-size: clamp(12px, 1.4vw, 28px);
+}
+
+.brand .brand-meta {
+  font-size: 11px;
+  opacity: 0.95;
+}
+
+.skills {
+  margin-top: 10px;
+}
+
+.skills h2 {
+  font-size: 0.9em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  color: var(--light);
+}
+
+.skills ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.skills li {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.75em;
+  font-weight: 600;
+  color: var(--light);
+}
+
+.side-links {
+  position: absolute;
+  right: 28px;
+  bottom: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: right;
+  z-index: 5;
+  font-size: 11px;
+}
+
+.side-links a {
+  color: var(--light);
+  text-decoration: none;
+  font-weight: 600;
+  opacity: 0.95;
+}
+
+.side-links a:hover {
+  opacity: 0.6;
+}
+
+@media (max-width: 900px) {
+  .giant-words {
+    top: 16%;
+  }
+
+  .word {
+    font-size: clamp(3rem, 10vw, 10rem);
+  }
+
+  .brand .brand-name {
+    font-size: clamp(10px, 1.2vw, 24px);
+  }
+
+  .brand .brand-meta {
+    font-size: 10px;
+  }
+
+  .side-links {
+    font-size: 10px;
+    right: 16px;
+    bottom: 16px;
+    gap: 6px;
+  }
+
+  .brand {
+    left: 16px;
+    bottom: 16px;
+    gap: 8px;
+  }
+
+  .skills ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
